@@ -1,4 +1,4 @@
-'
+'''
   sensor_test.py - This is basic sensor_test example.
   Created by Yasin Kaya (selengalp), August 28, 2018.
 '''
@@ -26,4 +26,4 @@ def getInput():
 	time.sleep(2)
 	node.turnOffUserLED()
 
-	return [str(node.readTemp()),str(node.readHum()),g.gatlng]
+	return [str(node.readTemp()),str(node.readHum()),g.latlng]
