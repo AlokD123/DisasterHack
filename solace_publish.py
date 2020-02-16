@@ -7,9 +7,9 @@ import json
 
 
 # Connection parms for Solace Event Broker
-#solace_url = "mr2aqty0xnecd5.messaging.solace.cloud"
-solace_url = "mqtt.eclipse.org"
-solace_port = 1883
+solace_url = "mr2aqty0xnecd5.messaging.solace.cloud"
+#solace_url = "mqtt.eclipse.org"
+solace_port = 21062
 solace_user = "solace-cloud-client"
 solace_passwd = "80rkel9bt7789ja91pgls7snl"
 solace_clientid = "vats_id"
