@@ -50,19 +50,20 @@ while 1:
 	    #camera_payload = {'timestamp':int(time.time()), 'feature':'Camera', 'Pic': byte_arr}
 	    #camera_payload = json.dumps(camera_payload,indent=4) #3
 	    #camera_payload = json.JSONEncoder().encode(byte_arr)
-	    #client.publish('devices/camera/events',camera_payload) #5
+	    #client.publish('devices/1/camera/events',camera_payload) #5
 
 	gps = [{"lat":lat,"lng":longitude}]
 	gps_payload = gps
 	gps_payload = json.dumps(gps_payload)
-	client.publish('devices/gps/events',gps_payload)
+	if temp>20:
+	    client.publish('devices/1/gps/events',gps_payload) #Publish site only if e.g. temperature threshold
 
 	temperature_payload = {"timestamp":int(time.time()),"temperature":temp}
 	temperature_payload = json.dumps(temperature_payload,indent=4)
-	client.publish('devices/temperature/events',temperature_payload)
+	client.publish('devices/1/temperature/events',temperature_payload)
 
 	humidity_payload = {"timestamp":int(time.time()), "feature":humidity}
 	humidity_payload = json.dumps(humidity_payload,indent=4)
-	client.publish('devices/humidity/events',humidity_payload)
+	client.publish('devices/1/humidity/events',humidity_payload)
 
 client.loop_forever()
